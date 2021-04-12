@@ -13,7 +13,7 @@
  * the output should be ["file", "file(1)", "image", "file(1)(1)", "file(2)"]
  *
  */
-function renameFiles(names) {
+function renameFiles (names) {
   if (names.length === 0) {
     return [];
   }
