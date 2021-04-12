@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-use-before-define */
 /**
  * In the popular Minesweeper game you have a board with some mines and those cells
  * that don't contain a mine have a number in it that indicates the total number of mines
@@ -21,8 +23,24 @@
  *  [1, 1, 1]
  * ]
  */
-function minesweeper(/* matrix */) {
-  throw new Error('Not implemented');
+function minesweeper (matrix) {
+  return matrix.map((a, i) => a.map((b, j) => (b === true ? 1 : count(matrix, i, j))));
+}
+
+function count (data, i, j) {
+  let count = 0;
+  const prevRow = data[i - 1];
+  const currentRow = data[i];
+  const nextRow = data[i + 1];
+  [prevRow, currentRow, nextRow].forEach((row) => {
+    if (row) {
+      if (row[j - 1] === true) count++;
+      if (row[j] === true) count++;
+      if (row[j + 1] === true) count++;
+    }
+  });
+
+  return count;
 }
 
 module.exports = minesweeper;
