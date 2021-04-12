@@ -10,18 +10,20 @@
  * queue.dequeue(); // returns the top element from queue and deletes it, returns 1
  *
  */
+const array = [];
 
 class Queue {
-  get size() {
-    throw new Error('Not implemented');
+  get size () {
+    return array.length;
   }
 
-  enqueue(/* element */) {
-    throw new Error('Not implemented');
+  enqueue (element) {
+    // eslint-disable-next-line no-console
+    array.unshift(element);
   }
 
-  dequeue() {
-    throw new Error('Not implemented');
+  dequeue () {
+    return array.pop();
   }
 }
 
