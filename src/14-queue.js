@@ -1,4 +1,5 @@
-// const ListNode = require('../extensions/list-node');
+// eslint-disable-next-line no-unused-vars
+const ListNode = require('../extensions/list-node');
 /**
  * Implement the Queue with a given interface via linked list (use ListNode extension above).
  *
@@ -10,20 +11,23 @@
  * queue.dequeue(); // returns the top element from queue and deletes it, returns 1
  *
  */
-const array = [];
 
 class Queue {
+  constructor () {
+    this.stack = [];
+    this.listNode = ListNode(1);
+  }
+
   get size () {
-    return array.length;
+    return this.stack.length;
   }
 
   enqueue (element) {
-    // eslint-disable-next-line no-console
-    array.unshift(element);
+    this.stack.push(element);
   }
 
   dequeue () {
-    return array.pop();
+    return this.stack.shift();
   }
 }
 

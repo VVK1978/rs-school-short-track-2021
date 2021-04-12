@@ -10,18 +10,21 @@
  * stack.pop(); // undefined
  *
  */
-const arr = [];
 class Stack {
+  constructor () {
+    this.stack = [];
+  }
+
   push (element) {
-    arr.push(element);
+    this.stack.push(element);
   }
 
   pop () {
-    return arr.pop();
+    return this.stack.pop();
   }
 
   peek () {
-    return arr[arr.length - 1];
+    return this.stack[this.stack.length - 1];
   }
 }
 
